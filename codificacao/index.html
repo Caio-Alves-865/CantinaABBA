@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantina Digital | Início</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <header class="cantina-header">
+
+        <div class="logo">
+            <div class="icone-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+            </div>
+            <h1>Cantina</h1>
+        </div>
+
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="menu-burguer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" x2="20" y1="12" y2="12" />
+                <line x1="4" x2="20" y1="6" y2="6" />
+                <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+        </label>
+
+        <nav class="cantina-nav">
+            <ul>
+                <li class="ativo"><a href="index.html">Início</a></li>
+                <li><a href="../html/cardapio.html">Cardápio</a></li>
+                <li><a href="../html/pedidos.html">Meus Pedidos</a></li>
+                <li><a href="../html/contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="conteudo-principal">
+
+        <div class="carrossel-container">
+            <div class="slide ativo">
+                <img src="../img/banner_1.jpg" alt="Promoção 1">
+            </div>
+            <div class="slide">
+                <img src="../img/banner_2.jpg" alt="Promoção 2">
+            </div>
+            <div class="slide">
+                <img src="../img/banner_3.jpg" alt="Promoção 3">
+            </div>
+
+            <button class="seta-carrossel anterior" onclick="moverSlide(-1)">&#10094;</button>
+            <button class="seta-carrossel proxima" onclick="moverSlide(1)">&#10095;</button>
+        </div>
+
+        <h2>Destaques do Dia</h2>
+        <!-- SEÇÃO DE PRODUTOS COM ROLAGEM HORIZONTAL -->
+        <section class="prateleira">
+            <div class="cabecalho-prateleira">
+                <h3>🍔 Lanches Mais Pedidos</h3>
+                <a href="cardapio.html" class="ver-todos">Ver todos</a>
+            </div>
+
+            <div class="container-cards">
+                <!-- Card 1 -->
+                <div class="card-produto">
+                    <img src="../img/coxinha.jpg" alt="Coxinha">
+                    <div class="info-produto">
+                        <h4>Coxinha</h4>
+                        <p>Massa, frango, especiarias muito top!</p>
+                        <div class="compra-produto">
+                            <span class="preco">R$ 8,00</span>
+                            <button class="btn-adicionar">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-produto">
+                    <img src="../img/coca.jpg" alt="Coca-Cola">
+                    <div class="info-produto">
+                        <h4>Coca-Cola</h4>
+                        <p>Água com gás e extrato de coca</p>
+                        <div class="compra-produto">
+                            <span class="preco">R$ 10,00</span>
+                            <button class="btn-adicionar">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-produto">
+                    <img src="../img/brigadeiro.jpg" alt="Brigadeiro">
+                    <div class="info-produto">
+                        <h4>Brigadeiro</h4>
+                        <p>Massa leve recheada chocolate.</p>
+                        <div class="compra-produto">
+                            <span class="preco">R$ 6,50</span>
+                            <button class="btn-adicionar">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card-produto">
+                    <img src="../img/coxinha.jpg" alt="Coxinha">
+                    <div class="info-produto">
+                        <h4>Coxinha</h4>
+                        <p>Massa, frango, especiarias muito top!</p>
+                        <div class="compra-produto">
+                            <span class="preco">R$ 5,00</span>
+                            <button class="btn-adicionar">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="cantina-footer">
+        <p>&copy; 2026 Sistema de Gestão da Cantina. Desenvolvido para a comunidade escolar.</p>
+        <div class="links-uteis">
+            <a href="../html/sobre.html">Sobre</a>
+            <a href="../html/ajuda.html">Ajuda / FAQ</a>
+        </div>
+    </footer>
+
+    <script src="../js/script_index.js"></script>
+
+</body>
+
+</html>

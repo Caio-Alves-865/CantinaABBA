@@ -1,0 +1,458 @@
+/* =========================================
+   VARIÁVEIS DE CORES PASTÉIS E TIPOGRAFIA
+   ========================================= */
+:root {
+  --cor-fundo: #FAF9F6;       /* Off-white suave para o fundo geral */
+  --cor-card: #FFFFFF;        /* Branco puro para destacar os blocos de conteúdo */
+  --cor-primaria: #FBC4B6;    /* Salmão pastel (quente, remete à alimentação) */
+  --cor-secundaria: #E2ECE9;  /* Verde menta pastel para equilíbrio visual */
+  --cor-destaque: #D1E1EC;    /* Azul pastel suave para elementos de destaque */
+  --cor-texto-escuro: #4A5568;/* Cinza grafite suave para leitura confortável (evita o preto puro) */
+  --cor-texto-claro: #718096; /* Cinza médio para textos secundários ou ícones */
+  
+  --fonte-principal: 'Inter', system-ui, -apple-system, sans-serif;
+  --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.03);
+  --borda-raio: 12px;
+}
+
+/* Reset Geral Avançado */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto-escuro);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   HEADER & NAVEGAÇÃO RESPONSIVA (CSS PURO)
+   ========================================= */
+.cantina-header {
+  background-color: var(--cor-card);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--sombra-suave);
+}
+
+/* Container do Logo com Ícone incorporado */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo .icone-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--cor-primaria);
+  border-radius: 50%;
+  color: var(--cor-texto-escuro);
+}
+
+.logo h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+/* Esconde o checkbox do menu burguer por padrão */
+#menu-toggle {
+  display: none;
+}
+
+/* Estilização do botão hambúrguer (Label do checkbox) */
+.menu-burguer {
+  display: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.menu-burguer:hover {
+  background-color: var(--cor-fundo);
+}
+
+.cantina-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.cantina-nav a {
+  color: var(--cor-texto-escuro);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+/* Efeito Hover Sutil com paleta pastel */
+.cantina-nav a:hover, 
+.cantina-nav li.ativo a {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto-escuro);
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL (MAIN CLASSIFICADO)
+   ========================================= */
+.conteudo-principal {
+  flex: 1;
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.conteudo-principal h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+/* Exemplo de espaço reservado para imagens/banners na página */
+.placeholder-imagem {
+  background-color: var(--cor-destaque);
+  border-radius: var(--borda-raio);
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  border: 2px dashed rgba(0,0,0,0.05);
+  color: var(--cor-texto-claro);
+  font-weight: 500;
+}
+
+/* =========================================
+   FOOTER MODERNO
+   ========================================= */
+.cantina-footer {
+  background-color: var(--cor-card);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  text-align: center;
+}
+
+.cantina-footer p {
+  font-size: 0.9rem;
+  color: var(--cor-texto-claro);
+  margin-bottom: 1rem;
+}
+
+.links-uteis {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.links-uteis a {
+  color: var(--cor-texto-claro);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.links-uteis a:hover {
+  color: var(--cor-texto-escuro);
+}
+
+/* =========================================
+   MEDIA QUERY: RESPONSIVIDADE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+  .cantina-header {
+    padding: 1rem;
+  }
+
+  /* Exibe o ícone do menu hambúrguer */
+  .menu-burguer {
+    display: block;
+  }
+
+  /* Transforma a navegação em um menu suspenso escondido */
+  .cantina-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--cor-card);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  }
+
+  .cantina-nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+
+  .cantina-nav a {
+    display: block;
+    padding: 0.75rem 1rem;
+    width: 100%;
+  }
+
+  /* O TRUQUE MÁGICO: Quando o checkbox estiver marcado, o menu expande */
+  #menu-toggle:checked ~ .cantina-nav {
+    max-height: 300px; /* Altura máxima para a animação de deslizar */
+  }
+}
+
+/* =========================================
+   CARROSSEL DE IMAGENS
+   ========================================= */
+.carrossel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 300px; /* Altura fixa do banner */
+  margin-bottom: 2rem;
+  border-radius: var(--borda-raio);
+  overflow: hidden; /* Esconde o que passar das bordas arredondadas */
+  box-shadow: var(--sombra-suave);
+  background-color: var(--cor-card);
+}
+
+.slide {
+  display: none; /* Esconde todos os slides por padrão */
+  width: 100%;
+  height: 100%;
+  animation: fade 0.8s ease-in-out;
+}
+
+/* O slide que tiver a classe .ativo será exibido */
+.slide.ativo {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+/* Setas de navegação */
+.seta-carrossel {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.6); /* Branco translúcido soft */
+  color: var(--cor-texto-escuro);
+  border: none;
+  border-radius: 50%; /* Botões redondinhos */
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seta-carrossel:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.anterior {
+  left: 15px;
+}
+
+.proxima {
+  right: 15px;
+}
+
+/* Animação suave de transição (Fade) */
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Ajuste responsivo do carrossel para celulares */
+@media (max-width: 768px) {
+  .carrossel-container {
+    height: 180px; /* Banner fica mais fininho no celular */
+  }
+  .seta-carrossel {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}
+
+/* =========================================
+   SEÇÃO DE PRODUTOS E ROLAGEM HORIZONTAL
+   ========================================= */
+.prateleira {
+  margin-bottom: 3rem;
+}
+
+.cabecalho-prateleira {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cabecalho-prateleira h3 {
+  font-size: 1.3rem;
+  color: var(--cor-texto-escuro);
+}
+
+.ver-todos {
+  font-size: 0.9rem;
+  color: var(--cor-texto-claro);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.ver-todos:hover {
+  color: var(--cor-primaria);
+}
+
+/* O Segredo da Rolagem Horizontal */
+.container-cards {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  
+  /* Comportamento de "ímã" ao rolar */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Customizando a barra de rolagem para combinar com o site */
+.container-cards::-webkit-scrollbar {
+  height: 8px;
+}
+
+.container-cards::-webkit-scrollbar-track {
+  background: var(--cor-fundo); 
+  border-radius: 4px;
+}
+
+.container-cards::-webkit-scrollbar-thumb {
+  background: var(--cor-secundaria); 
+  border-radius: 4px;
+}
+
+.container-cards::-webkit-scrollbar-thumb:hover {
+  background: var(--cor-destaque); 
+}
+
+/* =========================================
+   DESIGN DO CARD DO PRODUTO
+   ========================================= */
+.card-produto {
+  background-color: var(--cor-card);
+  border-radius: var(--borda-raio);
+  min-width: 240px; /* Largura fixa para manter o formato na rolagem */
+  max-width: 240px;
+  box-shadow: var(--sombra-suave);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  
+  /* Faz o card parar exatamente no início da tela ao rolar */
+  scroll-snap-align: start;
+  transition: transform 0.2s ease;
+}
+
+.card-produto:hover {
+  transform: translateY(-4px); /* Efeito sutil de levantar ao passar o mouse */
+}
+
+.card-produto img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.info-produto {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.info-produto h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+  color: var(--cor-texto-escuro);
+}
+
+.info-produto p {
+  font-size: 0.8rem;
+  color: var(--cor-texto-claro);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  flex: 1; /* Empurra o preço para baixo se a descrição for curta */
+}
+
+.compra-produto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.preco {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--cor-texto-escuro);
+}
+
+/* Botão de Adicionar */
+.btn-adicionar {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto-escuro);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.btn-adicionar:hover {
+  background-color: var(--cor-primaria);
+  color: white;
+}
